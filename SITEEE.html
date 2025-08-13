@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para o amor da minha vida 💖</title>
+  <meta name="description" content="Um site romântico para a melhor namorada do mundo ✨" />
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --card: #151621;
+      --soft: #1f2030;
+      --text: #ffffff;
+      --muted: #c7c7d6;
+      --accent: #ff5ca8;
+      --accent-2: #7c3aed;
+      --ring: rgba(255,92,168,.4);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% 0%, #1a1030 0%, transparent 60%),
+                  radial-gradient(1000px 700px at 100% 10%, #2a0f2e 0%, transparent 60%),
+                  linear-gradient(180deg, #0b0b12, #0f0f14);
+      overflow-x: hidden;
+    }
+
+    /* Floating hearts background */
+    .hearts {
+      position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+    }
+    .heart {
+      position: absolute; font-size: 14px; opacity: 0.7; animation: floatUp linear forwards;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) translateX(0) scale(0.8); opacity: .0; }
+      10% { opacity: .9; }
+      100% { transform: translateY(-10vh) translateX(var(--x)) scale(1.2); opacity: 0; }
+    }
+
+    header {
+      position: relative; z-index: 1; text-align: center; padding: 48px 16px 8px;
+    }
+    .title {
+      font-size: clamp(28px, 5vw, 56px);
+      line-height: 1.1; margin: 0 0 10px; font-weight: 800;
+      text-shadow: 0 8px 30px rgba(255, 92, 168, .25);
+    }
+    .subtitle {
+      color: var(--muted); font-size: clamp(14px, 2.5vw, 20px); margin: 0 0 24px;
+    }
+
+    .ribbon {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,92,168,.15), rgba(124,58,237,.15));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 0 0 4px rgba(255,92,168,.05), inset 0 0 40px rgba(255,255,255,.04);
+      backdrop-filter: blur(6px);
+      margin-bottom: 18px;
+    }
+
+    .cta {
+      position: relative; z-index: 1;
+      display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 10px;
+    }
+    button {
+      cursor: pointer; border: 0; border-radius: 14px; padding: 12px 18px; font-weight: 700;
+      color: white; background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 30px rgba(255,92,168,.25);
+      transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    button:hover { transform: translateY(-1px) scale(1.01); }
+    button:active { transform: translateY(0) scale(.99); filter: brightness(.95); }
+
+    main { position: relative; z-index: 1; padding: 20px 16px 80px; }
+    .grid {
+      max-width: 1080px; margin: 0 auto; display: grid; gap: 18px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card {
+      grid-column: span 12; background: linear-gradient(180deg, var(--card), var(--soft));
+      border: 1px solid rgba(255,255,255,.06); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .card-inner { display: grid; grid-template-columns: 1fr; }
+    .card figure { margin: 0; position: relative; }
+    .card img { width: 100%; height: 320px; object-fit: cover; display: block; }
+    .caption { padding: 14px 16px; color: var(--muted); font-size: 14px; }
+    .tools { display: flex; gap: 8px; padding: 12px 16px 18px; }
+    .tools input[type="file"] { display: none; }
+    .file-label {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,.18); color: var(--muted); cursor: pointer;
+      background: rgba(255,255,255,.02);
+    }
+
+    /* Layout for 3 cards */
+    .c1 { grid-column: span 12; }
+    .c2 { grid-column: span 12; }
+    .c3 { grid-column: span 12; }
+    @media (min-width: 860px) {
+      .c1, .c2, .c3 { grid-column: span 4; }
+      .card img { height: 280px; }
+    }
+
+    .love-note {
+      max-width: 860px; margin: 28px auto 0; text-align: center; padding: 20px; border-radius: 18px;
+      background: linear-gradient(90deg, rgba(255,92,168,.10), rgba(124,58,237,.10));
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .love-note h2 { margin: 0 0 10px; font-size: clamp(18px, 3vw, 28px); }
+    .love-note p { margin: 0; color: var(--muted); font-size: clamp(14px, 2.2vw, 18px); }
+
+    footer {
+      position: relative; z-index: 1; text-align: center; color: var(--muted); padding: 28px 16px 48px;
+    }
+    .mini { font-size: 13px; opacity: .9; }
+  </style>
+</head>
+<body>
+  <!-- Floating hearts container -->
+  <div class="hearts" id="hearts"></div>
+
+  <header>
+    <div class="ribbon">💘✨💖🌹💞🌟</div>
+    <h1 class="title">Para o amor da minha vida 💖</h1>
+    <p class="subtitle">Tu és a <strong>melhor namorada do mundo</strong>, <strong>única</strong>, especial e insubstituível! 🥰🌟💍🌈</p>
+    <div class="cta">
+      <button id="spawnHearts">Espalhar amor 💞</button>
+      <button id="downloadBtn" title="Guardar esta página">Descarregar página 💌</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- CARD 1 -->
+      <section class="card c1">
+        <div class="card-inner">
+          <figure>
+            <img id="img1" alt="A nossa foto 1" src="IMAGENS/IMG_20250808_223750_491.jpg" />
+          </figure>
+          <div class="caption">Nós os dois 💑 — clica em “Carregar foto” para trocar a imagem.</div>
+          <div class="tools">
+            <label class="file-label">📸 Carregar foto 1
+              <input id="file1" type="file" accept="image/*" />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARD 2 -->
+      <section class="card c2">
+        <div class="card-inner">
+          <figure>
+            <img id="img2" alt="A nossa foto 2" src="IMAGENS/528669866_1912852742838084_5607106987244609911_n.jpg" />
+          </figure>
+          <div class="caption">O teu sorriso é o meu sol ☀️💗</div>
+          <div class="tools">
+            <label class="file-label">📸 Carregar foto 2
+              <input id="file2" type="file" accept="image/*" />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARD 3 -->
+      <section class="card c3">
+        <div class="card-inner">
+          <figure>
+            <img id="img3" alt="A nossa foto 3" src="IMAGENS/IMG_20250808_223745_297.jpg" />
+          </figure>
+          <div class="caption">Momentos únicos contigo ✨🌷</div>
+          <div class="tools">
+            <label class="file-label">📸 Carregar foto 3
+              <input id="file3" type="file" accept="image/*" />
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="love-note">
+      <h2>És a melhor namorada do mundo! 💕</h2>
+      <p>
+        Obrigado por seres <strong>única</strong>, incrível, e por fazeres o meu coração sorrir todos os dias. 
+        Amo-te para sempre 💞💫💐 — hoje, amanhã e sempre! 🫶
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p class="mini">Feito com muito ❤️ por quem te ama ao infinito ♾️</p>
+  </footer>
+
+  <script>
+    // Preview local image uploads
+    function bindPreview(inputId, imgId) {
+      const input = document.getElementById(inputId);
+      const img = document.getElementById(imgId);
+      input.addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => { img.src = reader.result; };
+        reader.readAsDataURL(file);
+      });
+    }
+    bindPreview('file1', 'img1');
+    bindPreview('file2', 'img2');
+    bindPreview('file3', 'img3');
+
+    // Floating hearts generator
+    const hearts = document.getElementById('hearts');
+    const emojis = ['💖','💘','💞','💓','💗','💟','💕','💝','🌹','✨','🫶'];
+    function popHearts(count = 24, duration = 6000) {
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      for (let i = 0; i < count; i++) {
+        const h = document.createElement('div');
+        h.className = 'heart';
+        h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        const left = Math.random() * vw;
+        const size = 12 + Math.random() * 20;
+        h.style.left = left + 'px';
+        h.style.fontSize = size + 'px';
+        h.style.setProperty('--x', (Math.random() * 60 - 30) + 'px');
+        const time = duration + Math.random() * 3000;
+        h.style.animationDuration = time + 'ms';
+        hearts.appendChild(h);
+        setTimeout(() => h.remove(), time);
+      }
+    }
+    popHearts(30, 7000); // initial burst
+
+    document.getElementById('spawnHearts').addEventListener('click', () => popHearts());
+
+    // Download this page as an HTML file
+    function downloadFile(filename, text) {
+      const element = document.createElement('a');
+      element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      downloadFile('amor-da-minha-vida.html', document.documentElement.outerHTML);
+    });
+  </script>
+</body>
+</html>
